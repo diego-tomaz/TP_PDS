@@ -14,3 +14,35 @@
 - Linguagem de programação: Python/JavaScript
 - Construção da interface: ReactJS, HTML, CSS
 - Banco de dados: PostgreSQL
+
+
+Backlog do produto:
+
+- Tarefas Técnicas
+    - Preparar ambiente de desenvolvimento
+    - Criar o esquema de banco de dados [Clarice, Diego, Lucas, Rodrigo]
+    - Discutir cenários de uso  [Clarice, Diego, Lucas, Rodrigo]
+
+- História: Como garçom, eu quero cadastrar pedidos
+    - Fazer uma interface web para o cadastro de itens
+    - Criar e testar endpoint para criar pedidos
+    - Criar e testar endpoint para remover pedidos
+    - Criar e testar endpoint para alterar um pedido
+
+- História: Como gerente, eu quero cadastrar produtos
+    - Criar e testar endpoint para criar produtos
+    - Criar e testar endpoint para remover produtos
+    - Criar e testar endpoint para alterar um produto
+
+- História: Como gerente, eu quero visualizar pedidos feitos e escolher a ordenação dos itens
+    - Criar uma interface web para a visualização dos itens
+    - Criar a funcionalidade de filtros para que o usuário possa visualizar pedidos, produtos e estoques na mesma tela. 
+
+- História: Como gerente, eu gostaria cadastrar itens de estoque:
+    - Criar e testar endpoint para criar um item de estoque
+    - Criar e testar endpoint para remover um item de estoque
+    - Criar e testar endpoint para alterar um item de estoque
+
+- Como garçom eu gostaria de visualizar os produtos para saber o que sugerir para o cliente
+    - Criar a interface web para a visualização de pratos e bebidas com a opção de incluir itens no pedido
+
