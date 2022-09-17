@@ -44,6 +44,6 @@ Backlog do produto:
     - Criar e testar endpoint para remover um item de estoque
     - Criar e testar endpoint para alterar um item de estoque
 
-- Como garçom eu gostaria de visualizar os produtos para saber o que sugerir para o cliente
+- História: Como garçom eu gostaria de visualizar os produtos para saber o que sugerir para o cliente
     - Criar a interface web para a visualização de pratos e bebidas com a opção de incluir itens no pedido
 
