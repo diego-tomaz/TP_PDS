@@ -47,3 +47,17 @@ Backlog do produto:
 - História: Como garçom eu gostaria de visualizar os produtos para saber o que sugerir para o cliente
     - Criar a interface web para a visualização de pratos e bebidas com a opção de incluir itens no pedido
 
+- História: Como gerente, gostaria de uma ter uma visualização do faturamento em um período de tempo
+    - Criar a interface web para a visualização gráfica dos dados de faturamento
+    - Criar métodos que sejam responsáveis por gerar um output dos dados 
+
+Backlog da sprint 2: 
+
+- Criar o esquema de banco de dados
+- Criar tabelas das principais entidades
+- Criar a tela de login 
+- Criar a validação para os dados inseridos no login
+- Criar a tela de cadastro de itens
+- Criar método de cadastro dos itens de pedido
+- Criar método de cadastro dos itens de estoque
+
