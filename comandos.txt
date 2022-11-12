@@ -1,0 +1,12 @@
+comandos úteis
+pip install psycopg2-binary
+
+
+links úteis
+https://blog.allegro.tech/2020/05/hexagonal-architecture-by-example.html
+https://www.youtube.com/watch?v=OOSl2jeAA5U
+https://www.youtube.com/watch?v=7LNl2JlZKHA&t=582s
+https://www.psycopg.org/docs/install.html
+https://www.freecodecamp.org/news/how-to-create-and-upload-your-first-python-package-to-pypi/
+https://docs.python.org/3/tutorial/modules.html#packages
+https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/
