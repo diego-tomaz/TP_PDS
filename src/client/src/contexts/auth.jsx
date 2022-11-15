@@ -18,6 +18,7 @@ export const AuthProvider = ({children}) => {
                     if(user.password === password) {
                         setUser({id: user.id, email})
                         navigate("/")
+                        sessionStorage.setItem('user', JSON.stringify(user));
                     } else {
                         setErrorMessage("Senha incorreta")
                     }
