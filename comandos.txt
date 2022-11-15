@@ -1,5 +1,11 @@
 comandos úteis
 pip install psycopg2-binary
+pip install flask
+export FLASK_APP=routes.py
+export FLASK_ENV=development
+flask run
+npm install react-bootstrap bootstrap
+
 
 
 links úteis
