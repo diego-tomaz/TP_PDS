@@ -1,13 +1,15 @@
+
 .form {
   font-family: 'Open Sans', sans-serif;
   background-color: rgb(255, 255, 255);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%,-50%);
   padding: 40px;
   border-radius: 25px;
   color: rgb(5, 5, 5);
+  justify-content: center;
 }
 
 h1 {
@@ -24,6 +26,21 @@ input {
   border-radius: 15px;
 }
 
+img {
+  margin: auto;
+  width: 130%;
+  justify-content: center;
+}
+
+.box {
+  width: 212px;
+  height: 90px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+
 button {
   background-color: rgb(39, 39, 39);
   padding: 15px;
@@ -36,6 +53,8 @@ button {
 
 body {
   height: 100vh;
-  background: linear-gradient(180deg, hsl(44, 100%, 37%), #e9be00);
+  background: linear-gradient(180deg,hsl(44, 100%, 37%),#e9be00);
 
 }
+
+
