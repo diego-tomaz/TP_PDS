@@ -7,12 +7,12 @@ export const Login = () => {
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
-        fetch("/api").then(
+        fetch("/users").then(
             res => res.json()
             ).then(
                 data => {
-                    console.log('teste')
-                console.log(data)
+                    const user = data.find(item => item && item.email === email)
+                    console.log(user)
             }
         )
 
