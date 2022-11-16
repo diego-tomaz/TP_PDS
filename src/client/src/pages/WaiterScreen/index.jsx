@@ -5,6 +5,12 @@ export const WaiterScreen = () => {
     const [user, setUser] = useState("")
 
     return (
-        <div>Atendente</div>
+        <div className="fundo">
+            <div className="actions">
+                    <button type="submit">Enviar Pedido</button>
+                    <button type="button">Gerenciar pedidos</button>
+                </div>
+        </div>
+
     )
 }
