@@ -16,7 +16,7 @@ export const AuthProvider = ({children}) => {
                 data => {
                     const user = data.find(item => item && item.email === email)
                     if(user.password === password) {
-                        setUser({id: user.id, email})
+                        setUser({id: user.id, email, role: user.role})
                         navigate("/")
                         sessionStorage.setItem('user', JSON.stringify(user));
                     } else {
