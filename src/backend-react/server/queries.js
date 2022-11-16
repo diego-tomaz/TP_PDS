@@ -57,12 +57,12 @@ const getOrders = (request, response) => {
 }
 
 const addProduct = (request, response) => {
-    const {productName, productQty, productSku} = request.body
-    pool.query('INSERT INTO product (name, quantity, sku) VALUES ($1, $2, $3)', [productName, productQty, productSku], (error, results) => {
+    const {productName, productQty, productSku, productCost} = request.body
+    pool.query('INSERT INTO product (name, quantity, sku, price) VALUES ($1, $2, $3, $4)', [productName, productQty, productSku, productCost], (error, results) => {
         if (error) {
             throw error
         }
-        response.status(201).send(`Product added with id: ${results.rows[0].id}`)
+        response.status(201).send(`Produto adicionado com o sku: ${productSku}`)
     })
 }
 

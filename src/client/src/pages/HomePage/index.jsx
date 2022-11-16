@@ -11,7 +11,8 @@ export const HomePage = () => {
         { heading: 'Preço', value: 'price' }
     ]);
     let [messages, setMessage] = useState("");
-
+    let [typeOfItem, setTypeOfItem] = useState("product")
+    let [idCount, setID] = useState(89);
 
     const setProduct = (event) => {
         setDataTable([]);
@@ -29,7 +30,8 @@ export const HomePage = () => {
 
             setDataTable(data)
         });
-
+        
+        setTypeOfItem("product");
     }
 
 
@@ -48,6 +50,7 @@ export const HomePage = () => {
 
             setDataTable(data)
         });
+        setTypeOfItem("stock");
     }
 
     const setOrder = (event) => {
@@ -67,12 +70,39 @@ export const HomePage = () => {
 
             setDataTable(data)
         });
+        setTypeOfItem("order");
+
     }
 
 
 
     function addItem () {
         console.log('addItem')
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        };
+
+        if(typeOfItem === "product") {
+            requestOptions.body = JSON.stringify({ productName: 'React PUT Request Example', productQty: 2, productCost: 8, productSku:  idCount})
+            fetch('addProducts/', requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data));
+        } else if(typeOfItem === "stock") {
+            requestOptions.body = JSON.stringify({ name: 'React PUT Request Example', quantity: 2, cost: 8 })
+            fetch('addStock', requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data));
+
+        } else if(typeOfItem === "order") {
+            requestOptions.body = JSON.stringify({ total_value: 69, cost: 2, id: 8 })
+
+            fetch('addOrders', requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data));
+        }
+        setID(idCount++);
+
     }
 
     function deleteItem () {
