@@ -39,7 +39,26 @@ table td {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-flow: column;
 
+}
+
+.userLogged {
+    width: 100vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-flow: row;
+    
+}
+
+.userLogged p {
+    margin-right: 50px;
+}
+
+.userLogged p:hover {
+    color: aliceblue;
+    cursor: pointer;
 }
 
 .dashboard-center {
@@ -82,4 +101,24 @@ table td {
     background-color: rgba(185, 57, 32, 0.553);
     cursor:pointer;
 
+}
+
+.finalData {
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row;
+
+}
+
+.newItems {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row;
+}
+
+.newItems input {
+    margin: 10px;
 }

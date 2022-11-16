@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react"
 import TableSetup from '../TableSetup';
 import './style.css'
+// import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from "reactstrap";
+
 
 
 export const HomePage = () => {
+
     const [dataTable, setDataTable] = useState([]);
     let [column, setColumnTable] = useState([
         { heading: 'Produto', value: 'name' },
@@ -13,7 +16,17 @@ export const HomePage = () => {
     let [messages, setMessage] = useState("");
     let [typeOfItem, setTypeOfItem] = useState("product")
     let [idCount, setID] = useState(89);
+    let [itemName, setItemName] = useState("");
+    let [itemCost, setItemCost] = useState(0);
+    let [itemQt, setItemQt] = useState(0);
+    let [itemTotal_value, setItemTotal_value] = useState(0);
+    let [isNewItem, setIsNewItem] = useState(false);
+    let [input1, setInput1] = useState("");
+    let [input2, setInput2] = useState("");
+    let [input3, setInput3] = useState("");
 
+    const userName = JSON.parse(sessionStorage.getItem('user')).name;
+    
     const setProduct = (event) => {
         setDataTable([]);
         console.log('product')
@@ -26,8 +39,6 @@ export const HomePage = () => {
         fetch('/products')
         .then(response => response.json())
         .then(data => {
-            console.log('setStock', data)
-
             setDataTable(data)
         });
         
@@ -46,8 +57,6 @@ export const HomePage = () => {
         fetch('/stock')
         .then(response => response.json())
         .then(data => {
-            console.log('setStock', data)
-
             setDataTable(data)
         });
         setTypeOfItem("stock");
@@ -66,40 +75,64 @@ export const HomePage = () => {
         fetch('/order_requested')
         .then(response => response.json())
         .then(data => {
-            console.log('setStock', data)
-
             setDataTable(data)
         });
         setTypeOfItem("order");
 
     }
 
+    function setNewInfo() {
+        console.log('setNewInfo');
+        setIsNewItem(true)
+
+    }
 
 
     function addItem () {
-        console.log('addItem')
+        console.log('addItem');
+        console.log('itemName', input1);
+        console.log('itemQuantity', input2);
+        console.log('itemQuantity', input3);
+        
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }
         };
 
         if(typeOfItem === "product") {
-            requestOptions.body = JSON.stringify({ productName: 'React PUT Request Example', productQty: 2, productCost: 8, productSku:  idCount})
+            idCount = idCount++;
+            requestOptions.body = JSON.stringify({ productName: input1, productQty: parseInt(input2), productCost: parseInt(input3), productSku:  Math.floor(Math.random()*idCount)})
             fetch('addProducts/', requestOptions)
-            .then(response => response.json())
-            .then(data => console.log(data));
+            .then(response => {
+                console.log('response', response)
+            }).then(data => {
+                console.log('response', data)
+                setIsNewItem(false)
+                setProduct()
+            });
         } else if(typeOfItem === "stock") {
-            requestOptions.body = JSON.stringify({ name: 'React PUT Request Example', quantity: 2, cost: 8 })
+            requestOptions.body = JSON.stringify({ productName: input1, productQty: parseInt(input2), productCost: parseInt(input3), productId:  Math.floor(Math.random()*idCount) })
             fetch('addStock', requestOptions)
-            .then(response => response.json())
-            .then(data => console.log(data));
+            .then(response => {
+                console.log(response)
+            }).then(data => {
+                console.log(data)
+                setIsNewItem(false)
+                setStock();
+            });
 
         } else if(typeOfItem === "order") {
-            requestOptions.body = JSON.stringify({ total_value: 69, cost: 2, id: 8 })
+            requestOptions.body = JSON.stringify({ totalValue: parseInt(input1), orderCost: parseInt(input2), orderId:  Math.floor(Math.random()*idCount) })
 
             fetch('addOrders', requestOptions)
-            .then(response => response.json())
-            .then(data => console.log(data));
+            .then(response => {
+                console.log(response)
+            })
+            .then(data => {
+                console.log(data)
+                setIsNewItem(false)
+                setOrder();
+            });
         }
         setID(idCount++);
 
@@ -120,12 +153,20 @@ export const HomePage = () => {
         )
     }, []);
 
+    const setItem = (setFunction, event) => {
+        setFunction(event.target.value)
+        console.log(event.target.value)
+    }    
+
 
 
 
 
     return (
         <div className="dashboard">
+            <div className="userLogged">
+                <p>Olá, {userName}</p>
+            </div>
             <div className="dashboard-center">
                 <div className="chooseButtons">
                     <div className="semiTitle" onClickCapture={setProduct}>Produtos</div>
@@ -135,10 +176,22 @@ export const HomePage = () => {
                 <div className="table">
                     <TableSetup data={dataTable} column={column} />
                 </div>
-                <div className="action-buttons">
-                    <button type="button" className="newItem" onClick={addItem}>Novo</button>
+                <div className="finalData">
+                    {isNewItem?                 <div className="newItems">
+                        <input type="text" name="newItem" onChange={(e)=>setItem(setInput1, e)} />
+                        <input type="text" onChange={(e)=>setItem(setInput2, e)} value={input2}/>
+                        <input type="text" onChange={(e)=>setItem(setInput3, e)} value={input3}/>
+                    </div> : null}
+                    <div className="action-buttons">
+                    
+                    <button type="button" className="newItem" onClick={setNewInfo} style={{ display: isNewItem ? 'none' : 'block' }}>Novo item</button>
+                    <button type="button" className="newItem" style={{ display: isNewItem ? 'block' : 'none' }} onClick={addItem}>Salvar modificações</button>
                     <button type="button" className="deleteItem" onClick={deleteItem}>Excluir</button>
                 </div>
+                </div>
+                
+
+
                 <div className="messages">
                     {}
                 </div>

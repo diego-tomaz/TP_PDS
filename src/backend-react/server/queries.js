@@ -83,7 +83,7 @@ const addStockProduct = (request, response) => {
         if (error) {
             throw error
         }
-        response.status(201).send(`Stock product added with id: ${results.rows[0].id}`)
+        response.status(201).send(`Stock salvo com id: ${productId}`)
     })
 }
 
@@ -104,7 +104,7 @@ const addOrder = (request, response) => {
         if (error) {
             throw error
         }
-        response.status(201).send(`Order product added with id: ${results.rows[0].id}`)
+        response.status(201).send(`Pedido salvo com id: ${orderId}`)
     })
 }
 
