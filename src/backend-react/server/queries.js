@@ -48,7 +48,7 @@ const getProducts = (request, response) => {
 }
 
 const getOrders = (request, response) => {
-    pool.query('SELECT * FROM order ORDER BY id ASC ', (error, results) => {
+    pool.query('SELECT * FROM order_requested ORDER BY id ASC ', (error, results) => {
         if (error) {
             throw error
         }
@@ -100,7 +100,7 @@ const updateStockProduct = (request, response) => {
 
 const addOrder = (request, response) => {
     const {orderId, orderCost, totalValue} = request.body
-    pool.query('INSERT INTO order (id, cost, total_value) VALUES ($1, $2, $3)', [orderId, orderCost, totalValue], (error, results) => {
+    pool.query('INSERT INTO order_requested (id, cost, total_value) VALUES ($1, $2, $3)', [orderId, orderCost, totalValue], (error, results) => {
         if (error) {
             throw error
         }
@@ -144,7 +144,7 @@ const deleteProduct = (request, response) => {
 const deleteOrder = (request, response) => {
     const id = parseInt(request.params.id)
 
-    pool.query('DELETE from order WHERE id = $1', [id], (error) => {
+    pool.query('DELETE from order_requested WHERE id = $1', [id], (error) => {
         if (error) {
             throw error
         }

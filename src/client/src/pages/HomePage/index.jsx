@@ -22,6 +22,14 @@ export const HomePage = () => {
             { heading: 'Preço', value: 'price' }
         ])
 
+        fetch('/products')
+        .then(response => response.json())
+        .then(data => {
+            console.log('setStock', data)
+
+            setDataTable(data)
+        });
+
     }
 
 
@@ -52,7 +60,7 @@ export const HomePage = () => {
         ])
         console.log('setOrder')
 
-        fetch('/orders')
+        fetch('/order_requested')
         .then(response => response.json())
         .then(data => {
             console.log('setStock', data)
