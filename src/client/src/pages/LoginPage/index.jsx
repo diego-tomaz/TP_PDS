@@ -26,16 +26,23 @@ export const LoginPage = () => {
     return(
         <div id="login">
             <form onSubmit={onSubmitHandler} className="form">
+            <div className="box">
+                <img  src={require('./logo.png')} alt="" />
+            </div>
                 <div className="field">
                     <label htmlFor="email">Email</label>
+                    <div><br/></div>
                     <input id="email" name="email" onChange={(e)=>inputChangeHandler(setEmail, e)} type="text"/>
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
+                <div><br/></div>
+                    <label htmlFor="password">Senha</label>
+                    <div><br/></div>
                     <input id="password" name="password" onChange={(e)=>inputChangeHandler(setPassword, e)} type="password"/>
                 </div>
+                <div><br/></div>
                 <div className="actions">
-                    <button type="submit"/>
+                    <button type="submit">Entrar</button>
                 </div>
             </form>
         </div>
