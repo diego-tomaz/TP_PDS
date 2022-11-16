@@ -1,31 +1,21 @@
 import React, { useState, useEffect } from "react"
+import SimpleTableComponent from "reactjs-simple-table";
 
 export const HomePage = () => {
-    const [email, setEmail] = useState("")
+    const [user, setUser] = useState("")
     const [password, setPassword] = useState("")
 
 
-    const onSubmitHandler = (event) => {
-        event.preventDefault();
-        // fetch("/users").then(
-        //     res => res.json()
-        //     ).then(
-        //         data => {
-        //             const user = data.find(item => item && item.email === email)
-        //             console.log(user)
-        //     }
-        // )
+    useEffect(() => {
+        const userFromSession = JSON.parse(sessionStorage.getItem('user'));
+        setUser(userFromSession);
+        console.log(userFromSession)
+        console.log(user)
+    });
 
-    }
 
-    return(
-        <div id="login">
-            <form onSubmit={onSubmitHandler} className="form">
-                <div className="field">
-Minski
-                    <button type="submit"/>
-                </div>
-            </form>
-        </div>
+
+    return (
+        <div>{user.id}</div>
     )
 }
