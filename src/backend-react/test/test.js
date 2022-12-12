@@ -2,8 +2,6 @@ const express = require("express");
 const app = express();
 const server = require('../server/index.js');
 const queries = require('../server/queries.js')
-const supertest = require('supertest');
-const requestWithSupertest = supertest(server);
 
 // test('User Endpoints', () => {
 //     const res = queries.getUsers('/users')
@@ -15,7 +13,7 @@ const requestWithSupertest = supertest(server);
 // });
 
 test('Hello world', () => {
-  const res = requestWithSupertest.get('/api');
+  const res = app.get('/api');
   //expect(res.status).toEqual(200);
 });
 
