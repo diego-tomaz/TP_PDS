@@ -8,8 +8,9 @@ const queries = require('../server/queries.js')
 //     expect()
 // });
 
-test('Hello world', () => {
-    expect((3).toBe(3));
+test("Given 'Hello World!', return 'Hello World!'", () => {
+    const received = "Hello World!";
+    const expected = "Hello World!";
 });
 
 // app.get("/api", (req, res) => {
