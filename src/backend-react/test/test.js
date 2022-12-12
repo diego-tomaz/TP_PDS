@@ -12,7 +12,6 @@ test('Users endpoint', () => {
   //expect(res.status).toEqual(200);
 });
 
-
 test('Products endpoint', () => {
   const res = app.get('/products');
   //expect(res.status).toEqual(200);
