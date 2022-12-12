@@ -30,12 +30,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: './src/backend-react/package-lock.json'
-    - run: npm install jest --save-dev
-    - run: npm install supertest --save-dev
-    - run: npm install cross-env --save-dev
-    - run: npm install --save sequelize
-    - run: npm install sequelize-cli
-    - run: npx sequelize init
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
