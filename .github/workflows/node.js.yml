@@ -33,6 +33,7 @@ jobs:
     - run: npm install jest --save-dev
     - run: npm install supertest --save-dev
     - run: npm install cross-env --save-dev
+    - run: npm install --save sequelize
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
