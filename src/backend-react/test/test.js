@@ -8,9 +8,14 @@ const queries = require('../server/queries.js')
 //     expect()
 // });
 
-test("Given 'Hello World!', return 'Hello World!'", () => {
-    const received = "Hello World!";
-    const expected = "Hello World!";
+describe("Test for initial Jest setup.", () => {
+  describe("practiceTest", () => {
+    test("Given 'Hello World!', return 'Hello World!'", () => {
+      const received = "Hello World!";
+      const expected = "Hello World!";
+      expect(practiceTest(argument)).toBe(expected);
+    });
+  });
 });
 
 // app.get("/api", (req, res) => {
