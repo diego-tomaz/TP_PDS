@@ -31,6 +31,7 @@ jobs:
         cache: 'npm'
         cache-dependency-path: './src/backend-react/package-lock.json'
     - run: npm install jest
+    - run: npm install supertest --save-dev
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
