@@ -10,7 +10,7 @@ const queries = require('../server/queries.js')
 
 test('Hello world', () => {
     expect((3).toBe(3));
-};
+});
 
 // app.get("/api", (req, res) => {
 //     res.json({ message: "Hello from server!" });
