@@ -15,7 +15,7 @@ const requestWithSupertest = supertest(server);
 // });
 
 test('Hello world', () => {
-  const res = await requestWithSupertest.get('/api');
+  const res = requestWithSupertest.get('/api');
   expect(res.status).toEqual(200);
 });
 
