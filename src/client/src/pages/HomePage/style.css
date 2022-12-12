@@ -1,0 +1,124 @@
+.chooseButtons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row;
+    width: 90vw;
+    height: 10vh;
+}
+
+.semiTitle {
+    font-size: 25px;
+}
+
+.semiTitle:hover {
+    color:rgb(220, 212, 106);
+    cursor:pointer;
+
+}
+
+table {
+    border-collapse: collapse;
+    max-width: 900px;
+    width: 100%;
+    margin: 2rem auto;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.table {
+}
+
+.dashboard {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+
+}
+
+.userLogged {
+    width: 100vw;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-flow: row;
+    
+}
+
+.userLogged p {
+    margin-right: 50px;
+}
+
+.userLogged p:hover {
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.dashboard-center {
+    width: 90vw;
+    height: 90vh;
+    background-color: aliceblue;
+    border-radius: 10px;
+    z-index: 99;
+}
+
+.action-buttons {
+    width: 90vw;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    flex-flow: column;
+
+}
+
+.newItem {
+    width: 15vw;
+    background-color: rgba(48, 168, 48);
+    margin-right: 10px;
+}
+
+.deleteItem {
+    width: 15vw;
+    background-color: rgb(185, 57, 32);
+    margin: 10px;
+
+}
+
+.newItem:hover {
+    background-color: rgba(48, 168, 48, 0.444);
+    cursor:pointer;
+
+}
+
+.deleteItem:hover {
+    background-color: rgba(185, 57, 32, 0.553);
+    cursor:pointer;
+
+}
+
+.finalData {
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row;
+
+}
+
+.newItems {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row;
+}
+
+.newItems input {
+    margin: 10px;
+}
