@@ -3,6 +3,11 @@ const app = express();
 const server = require('../server/index.js');
 const queries = require('../server/queries.js')
 
+test('Hello from server', () => {
+  const res = app.get('/api');
+  //expect(res.status).toEqual(200);
+});
+
 test('Users endpoint', () => {
   const res = app.get('/users');
   //expect(res.status).toEqual(200);
@@ -23,12 +28,6 @@ test('Orders endpoint', () => {
 
 test('Stock endpoint', () => {
   const res = app.get('/stock');
-  //expect(res.status).toEqual(200);
-});
-
-
-test('Hello from server', () => {
-  const res = app.get('/api');
   //expect(res.status).toEqual(200);
 });
 
